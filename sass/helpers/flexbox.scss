@@ -1,10 +1,27 @@
 @use "../utilities/initial-variables" as iv;
+@use "../utilities/mixins" as mx;
 
 $flex-direction-values: row, row-reverse, column, column-reverse;
 
 @each $value in $flex-direction-values {
   .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value} {
     flex-direction: $value !important;
+  }
+}
+
+@include mx.mobile {
+  @each $value in $flex-direction-values {
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-mobile {
+      flex-direction: $value !important;
+    }
+  }
+}
+
+@include mx.tablet {
+  @each $value in $flex-direction-values {
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-tablet {
+      flex-direction: $value !important;
+    }
   }
 }
 
