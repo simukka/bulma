@@ -17,9 +17,17 @@ $flex-direction-values: row, row-reverse, column, column-reverse;
   }
 }
 
-@include mx.tablet {
+@include mx.tablet-only {
   @each $value in $flex-direction-values {
     .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-tablet {
+      flex-direction: $value !important;
+    }
+  }
+}
+
+@include mx.desktop {
+  @each $value in $flex-direction-values {
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-desktop {
       flex-direction: $value !important;
     }
   }
