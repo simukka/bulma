@@ -41,6 +41,14 @@ $flex-direction-values: row, row-reverse, column, column-reverse;
   }
 }
 
+@include mx.until-fullhd {
+  @each $value in $flex-direction-values {
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-until-fullhd {
+      flex-direction: $value !important;
+    }
+  }
+}
+
 $flex-wrap-values: nowrap, wrap, wrap-reverse;
 
 @each $value in $flex-wrap-values {
