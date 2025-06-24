@@ -17,7 +17,7 @@ $flex-direction-values: row, row-reverse, column, column-reverse;
   }
 }
 
-@include mx.tablet-only {
+@include mx.tablet {
   @each $value in $flex-direction-values {
     .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-tablet {
       flex-direction: $value !important;
@@ -28,6 +28,14 @@ $flex-direction-values: row, row-reverse, column, column-reverse;
 @include mx.desktop {
   @each $value in $flex-direction-values {
     .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-desktop {
+      flex-direction: $value !important;
+    }
+  }
+}
+
+@include mx.widescreen {
+  @each $value in $flex-direction-values {
+    .#{iv.$class-prefix}#{iv.$helpers-prefix}flex-direction-#{$value}-widescreen {
       flex-direction: $value !important;
     }
   }
